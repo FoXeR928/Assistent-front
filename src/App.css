@@ -1,0 +1,75 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.conteiner-auth{
+  background:#74b65f ;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+.form-auth{
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  width: 350px;
+  margin: 20vh auto;
+}
+.Navigation{
+  margin-right: 50px;
+  background: #74b65f;
+}
+.nav{
+  background: #74b65f;
+  width: 350px;
+  min-height: 100vh;
+  transition: margin .5s;
+  margin-left: 0;
+  margin-top: 40px;
+}
+.nav.is-nav-open{
+  margin-left: -350px;
+}
+.bar-conteiner{
+  background: #74b65f;
+}
+.menu-bar{
+  width: 40px;
+  height: 40px;
+}
+.-column{
+  flex-direction: column;
+}
+.-button{
+  color: white;
+  font-size: 14pt;
+  background: #618b5388;
+  border: none;
+}
+.-button:hover{
+  background: #3e6333;
+}
+.button-nav{
+  padding: 20px;
+  margin: 5px 0;
+  text-align: start;
+}
+.-flex{
+  display: flex;
+}
+.select-pc{
+  width: 300px;
+  height: 24px;
+}
+.-margin{
+  margin-bottom: 20px;
+}
+.path{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.-path{
+  margin-top: 20px;
+}
