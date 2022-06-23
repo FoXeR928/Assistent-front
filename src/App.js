@@ -5,7 +5,6 @@ import Admin from './elements/Admin'
 import Axios from "axios";
 
 const api='http://127.0.0.1:11000/'
-const userIn=''
 
 class App extends React.Component {
   constructor(prop) {
@@ -17,6 +16,7 @@ class App extends React.Component {
       user:'',
       password:'',
       message:'',
+      userIn:''
     };
     this.inputUser = this.inputUser.bind(this);
     this.inputPassword = this.inputPassword.bind(this);
@@ -32,14 +32,15 @@ class App extends React.Component {
     event.preventDefault()
     Axios.get(api+'login?user='+this.state.user+'&password='+this.state.password)
     .then(res => {
-      userIn=(res.data).user;
-      if((res.data).access==='user'){
+      if(res.data.access==='user'){
         this.setState({showLogin:true})
         this.setState({showAuth:false})
+        this.setState({userIn:res.data.user})
       }
-      else if((res.data).access==='admin'){
+      else if(res.data.access==='admin'){
         this.setState({showAdmin:true})
         this.setState({showAuth:false})
+        this.setState({userIn:res.data.user})
       }
       else{
         alert('Неверный логин или пароль')
@@ -59,8 +60,8 @@ class App extends React.Component {
                     <button className='butoon-form -button'>Войти</button>
                 </form>
             </div>:null}
-        {this.state.showLogin?<Main/>:null}
-        {this.state.showAdmin?<Admin/>:null}
+        {this.state.showLogin?<Main user={this.state.userIn}/>:null}
+        {this.state.showAdmin?<Admin user={this.state.userIn}/>:null}
       </body>
     )
   }

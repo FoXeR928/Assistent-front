@@ -10,6 +10,8 @@ class Profile extends React.Component {
                 <h2>Замена пароля</h2>
                 <label className='label -margin'>Пароль</label>
                 <input required className='input -input -margin' type='text'/>
+                <label className='label -margin'>Новый пароль</label>
+                <input required className='input -input -margin' type='text'/>
                 <label className='label -margin'>Повторить пароль</label>
                 <input required className='input -input -margin' type='text'/>
                 <button className='butoon-form -button'>Заменить</button>

@@ -3,18 +3,20 @@ import '../App.css';
 import bar from '../img/menu-bar-icon-white.png'
 import Panel from '../elements/Panel.js';
 import Profile from '../elements/Profile.js';
-import userIn from '../App.js'
 
 class Main extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state={
-            showPanel: true,
+            showPanel: false,
             showProfile: false,
-            user:userIn
+            user:''
         }
         this.openPanel=this.openPanel.bind(this)
         this.openProfile=this.openProfile.bind(this)
+    }
+    componentDidMount() {
+      this.setState({user:this.props.user})
     }
     handleClick() {
         const wrapper = document.getElementById('nav');
@@ -41,8 +43,8 @@ class Main extends React.Component {
             </div>
           </div>
           <main className='main'>
-            {this.state.showPanel?<Panel/>:null}
-            {this.state.showProfile?<Profile/>:null}
+            {this.state.showPanel?<Panel user={this.state.user}/>:null}
+            {this.state.showProfile?<Profile user={this.state.user}/>:null}
           </main>
         </div> 
     )

@@ -58,7 +58,7 @@ html, body {
 .-flex{
   display: flex;
 }
-.select-pc{
+.select{
   width: 300px;
   height: 24px;
 }
